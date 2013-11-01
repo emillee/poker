@@ -27,6 +27,7 @@ class Deck
   end
 
   def shuffle
+    @cards.shuffle!
   end
 
   def deal_card

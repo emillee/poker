@@ -51,8 +51,12 @@ describe Deck do
     end
   end
 
+  describe '#shuffle' do
+    it "should change the order of a card in the deck" do
+      spot_check = deck.cards[2]
+      deck.shuffle
+      expect(spot_check).to_not eq(deck.cards[2])
+    end
+  end
+
 end
-
-
-
-
