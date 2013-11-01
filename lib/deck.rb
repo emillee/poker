@@ -2,13 +2,28 @@ require_relative 'card'
 
 class Deck
 
+  attr_reader :cards
+
   def initialize
     build_deck
   end
 
   def build_deck
-    @cards = Array.new(13) { Card.new(:hearts, "10") }
-    @cards << Card.new(:spades, "7")
+    @cards = []
+    [:hearts, :diamonds, :spades, :clubs].each do |suit|
+      @cards << build_suit(suit)
+    end
+
+    @cards.flatten!
+  end
+
+  def build_suit(suit)
+    suited_cards = []
+    2.upto(14) do |i|
+      suited_cards << Card.new(suit, i)
+    end
+
+    suited_cards
   end
 
   def shuffle

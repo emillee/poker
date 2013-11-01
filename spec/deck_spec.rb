@@ -20,7 +20,7 @@ describe Deck do
 
   describe "#collect_rank" do
     it "should return 4 kings in a new deck" do
-      expect(deck.collect_rank('K').count).to eq(4)
+      expect(deck.collect_rank(13).count).to eq(4)
     end
 
   end
@@ -47,7 +47,7 @@ describe Deck do
     end
 
     it "should create a deck with four kings" do
-      expect(deck.collect_rank('K').count).to eq(4)
+      expect(deck.collect_rank(13).count).to eq(4)
     end
   end
 
