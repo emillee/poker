@@ -6,6 +6,18 @@ class Hand
     @cards = cards
   end
 
+  def best_hand
+    return :straight_flush  if straight_flush?
+    return :four_of_a_kind  if four_of_a_kind?
+    return :full_house      if full_house?
+    return :flush           if flush?
+    return :straight        if straight?
+    return :three_of_a_kind if three_of_a_kind?
+    return :two_pair        if two_pair?
+    return :one_pair        if one_pair?
+    :high_card
+  end
+
   def straight_flush?
     straight? && flush?
   end
