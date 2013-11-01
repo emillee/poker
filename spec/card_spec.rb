@@ -5,10 +5,10 @@ require 'card'
 
 describe Card do
 
-  let(:spade)   { Card.new(:spades, '2') }
-  let(:club)    { Card.new(:clubs, 'K') }
-  let(:heart)   { Card.new(:hearts, '10') }
-  let(:diamond) { Card.new(:diamonds, 'A') }
+  let(:spade)   { Card.new(:spades, 2) }
+  let(:club)    { Card.new(:clubs, 13) }
+  let(:heart)   { Card.new(:hearts, 10) }
+  let(:diamond) { Card.new(:diamonds, 14) }
 
   describe '#render' do
     it 'correctly renders spades' do
