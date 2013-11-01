@@ -21,4 +21,8 @@ class Deck
     @cards.select { |card| card.suit == suit }
   end
 
+  def collect_rank(rank)
+    @cards.select { |card| card.rank == rank }
+  end
+
 end
