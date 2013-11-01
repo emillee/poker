@@ -10,7 +10,7 @@ class Deck
 
   def build_deck
     @cards = []
-    [:hearts, :diamonds, :spades, :clubs].each do |suit|
+    Card::SUITS.each do |suit|
       @cards << build_suit(suit)
     end
 
@@ -31,7 +31,6 @@ class Deck
   end
 
   def deal_card
-    @cards.pop
   end
 
   def collect_suit(suit)
