@@ -31,6 +31,7 @@ class Deck
   end
 
   def deal_card
+    @cards.pop
   end
 
   def collect_suit(suit)

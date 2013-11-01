@@ -59,4 +59,16 @@ describe Deck do
     end
   end
 
+  describe '#deal_card' do
+    it "should return a single card" do
+      expect(deck.deal_card).to be_an_instance_of(Card)
+    end
+
+    it "should return the card off the top of the deck" do
+      spot_check = deck.cards[-1]
+      expect(deck.deal_card).to eq(spot_check)
+    end
+
+  end
+
 end
