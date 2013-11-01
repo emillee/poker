@@ -5,9 +5,9 @@ require 'card'
 
 describe Card do
 
-  let(:spade) { Card.new(:spades, '2') }
-  let(:club) { Card.new(:clubs, 'K') }
-  let(:heart) { Card.new(:hearts, '10') }
+  let(:spade)   { Card.new(:spades, '2') }
+  let(:club)    { Card.new(:clubs, 'K') }
+  let(:heart)   { Card.new(:hearts, '10') }
   let(:diamond) { Card.new(:diamonds, 'A') }
 
   describe '#render' do

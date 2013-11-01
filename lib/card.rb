@@ -8,7 +8,7 @@ class Card
   end
 
   def render
-    suit_conversion = { heart: '♥', diamond: '♦', spade: '♠', club: '♣' }
+    suit_conversion = { hearts: '♥', diamonds: '♦', spades: '♠', clubs: '♣' }
 
     "#{@rank}#{suit_conversion[@suit]}"
   end
