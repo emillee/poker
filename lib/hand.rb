@@ -11,9 +11,11 @@ class Hand
   end
 
   def four_of_a_kind?
+    rank_count.values.include?(4)
   end
 
   def full_house?
+    rank_count.values.include?(3) && rank_count.values.include?(2)
   end
 
   def flush?
@@ -41,22 +43,35 @@ class Hand
       else
         consecutive = 0
       end
-
-      false
     end
 
-
+    false
   end
 
   def three_of_a_kind?
+    rank_count.values.include?(3)
   end
 
   def two_pair?
+    rank_count.values.count(2) >= 2
   end
 
   def one_pair?
+    rank_count.values.include?(2)
   end
 
   def high_card
+    # do this later
+  end
+
+  def rank_count
+    rank_count = Hash.new(0)
+
+    @cards.each do |card|
+      rank_count[card.rank] += 1
+    end
+
+    rank_count
   end
 end
+
