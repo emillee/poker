@@ -1,6 +1,9 @@
 require_relative 'card'
+require_relative 'deck'
 
 class Hand
+
+  attr_accessor :cards
 
   def initialize(cards = [])
     @cards = cards
@@ -31,7 +34,7 @@ class Hand
   end
 
   def flush?
-    DECK::SUITS.each do |suit|
+    Deck::SUITS.each do |suit|
       suit_count = 0
       @cards.each do |card|
         suit_count += 1 if card.suit == suit
@@ -48,10 +51,10 @@ class Hand
 
     consecutive = 0
     ranks.each_with_index do |rank, index|
-      next if index == ranks.count
-      if rank == ranks[index + 1] - 1
+      next if index == 0
+      if rank == ranks[index - 1] + 1
         consecutive += 1
-        return true if consecutive > 4
+        return true if consecutive >= 4
       else
         consecutive = 0
       end

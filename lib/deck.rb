@@ -4,13 +4,15 @@ class Deck
 
   attr_reader :cards
 
+  SUITS = [:hearts, :clubs, :spades, :diamonds]
+
   def initialize
     build_deck
   end
 
   def build_deck
     @cards = []
-    Card::SUITS.each do |suit|
+    SUITS.each do |suit|
       @cards << build_suit(suit)
     end
 
